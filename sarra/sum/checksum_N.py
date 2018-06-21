@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from hashlib import sha512
+from hashlib import md5
 
 try :
          from sr_checksum       import *
@@ -8,23 +8,23 @@ except :
          from sarra.sr_checksum import *
 
 # ===================================
-# checksum_N class
+# checksum_n class
 # ===================================
 
-class checksum_N(sr_checksum):
+class checksum_n(sr_checksum):
       """
-      look at C code for more details
-      Did this just as a quick shot... not convinced it is ok
-      Still put a test below... Use with care
+      when there is more than one processing chain producing products, it can happen that files are equivalent
+      without being identical, for example if each server tags a product with ''generated on server 16', then
+      the generation tags will differ.   The simplest option for checksumming then is to use the name of the
+      product, which is generally the same from all the processing chains.  
       """
 
       def registered_as(self):
-          return 'N'
+          return 'n'
 
-      def set_path(self,filename,partstr):
-          self.filehash = sha512()
-          self.filehash.update(bytes(filename+partstr,'utf-8'))
-          self.value = self.filehash.hexdigest()
+      def set_path(self,path):
+          filename   = os.path.basename(path)
+          self.value = md5(bytes(filename,'utf-8')).hexdigest()
 
-self.add_sumalgo=checksum_N()
+self.add_sumalgo=checksum_n()
 
