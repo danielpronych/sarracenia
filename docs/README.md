@@ -3,10 +3,10 @@ MetPX-Sarracenia
 
 **Documentation**
 
--   Guides: \[ [Guides](doc/sr_subscribe.1.md#documentation) \] \[ [en
-    français](doc/fr/sr_subscribe.1.md#documentation) \]
--   Reference: \[ [Manual Pages](doc/sr_subscribe.1.md#see-also) \] \[
-    [en français](doc/fr/sr_subscribe.1.md#aussi-voir) \]
+-   Guides: \[ [Guides](sr_subscribe.1.md#documentation) \] \[ [en
+    français](fr/sr_subscribe.1.md#documentation) \]
+-   Reference: \[ [Manual Pages](sr_subscribe.1.md#see-also) \] \[ [en
+    français](fr/sr_subscribe.1.md#aussi-voir) \]
 
 <table>
 <colgroup>
